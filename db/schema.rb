@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119071036) do
+ActiveRecord::Schema.define(version: 20160119073648) do
 
   create_table "drinks", force: :cascade do |t|
     t.datetime "created_at",                 null: false
@@ -41,6 +41,17 @@ ActiveRecord::Schema.define(version: 20160119071036) do
     t.datetime "updated_at",                 null: false
     t.boolean  "done",       default: false
     t.boolean  "flag",       default: false
+  end
+
+  create_table "others", force: :cascade do |t|
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.boolean  "morning_ritual",        default: false
+    t.integer  "pages_read",            default: 0
+    t.integer  "level_of_satisfaction"
+    t.integer  "hours_productive",      default: 0
+    t.integer  "hours_unproductive",    default: 0
+    t.integer  "hours_freetime",        default: 0
   end
 
   create_table "runnings", force: :cascade do |t|
