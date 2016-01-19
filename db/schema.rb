@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119065654) do
+ActiveRecord::Schema.define(version: 20160119071036) do
 
   create_table "drinks", force: :cascade do |t|
     t.datetime "created_at",                 null: false
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20160119065654) do
     t.integer  "beer",       default: 0
     t.integer  "liquor",     default: 0
     t.boolean  "flag",       default: false
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "breakfast",       default: false
+    t.datetime "breakfast_time"
+    t.boolean  "lunch",           default: false
+    t.datetime "lunch_time"
+    t.boolean  "dinner",          default: false
+    t.datetime "dinner_time"
+    t.integer  "snack_healthy",   default: 0
+    t.integer  "snack_unhealthy", default: 0
   end
 
   create_table "gyms", force: :cascade do |t|
