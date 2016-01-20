@@ -11,16 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119073648) do
+ActiveRecord::Schema.define(version: 20160120151706) do
 
   create_table "drinks", force: :cascade do |t|
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "water",      default: 0
     t.integer  "coffee",     default: 0
     t.integer  "beer",       default: 0
     t.integer  "liquor",     default: 0
-    t.boolean  "flag",       default: false
   end
 
   create_table "foods", force: :cascade do |t|
@@ -40,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160119073648) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.boolean  "done",       default: false
-    t.boolean  "flag",       default: false
   end
 
   create_table "others", force: :cascade do |t|
@@ -62,11 +60,10 @@ ActiveRecord::Schema.define(version: 20160119073648) do
   end
 
   create_table "sleeps", force: :cascade do |t|
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.datetime "end_sleep"
     t.datetime "start_sleep"
-    t.boolean  "flag",        default: false
   end
 
   create_table "users", force: :cascade do |t|
