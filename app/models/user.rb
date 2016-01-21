@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+  has_many :drinks
+  has_many :foods
+  has_many :gyms
+  has_many :runnings
+  has_many :sleeps
+  has_many :others
+
   validates :phonenumber,
       presence: true,
       uniqueness: true

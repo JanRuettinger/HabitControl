@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120151706) do
+ActiveRecord::Schema.define(version: 20160120160607) do
 
   create_table "drinks", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20160120151706) do
     t.integer  "coffee",     default: 0
     t.integer  "beer",       default: 0
     t.integer  "liquor",     default: 0
+    t.integer  "user_id"
   end
+
+  add_index "drinks", ["user_id"], name: "index_drinks_on_user_id"
 
   create_table "foods", force: :cascade do |t|
     t.datetime "created_at",                      null: false
@@ -33,13 +36,19 @@ ActiveRecord::Schema.define(version: 20160120151706) do
     t.datetime "dinner_time"
     t.integer  "snack_healthy",   default: 0
     t.integer  "snack_unhealthy", default: 0
+    t.integer  "user_id"
   end
+
+  add_index "foods", ["user_id"], name: "index_foods_on_user_id"
 
   create_table "gyms", force: :cascade do |t|
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.boolean  "done",       default: false
+    t.integer  "user_id"
   end
+
+  add_index "gyms", ["user_id"], name: "index_gyms_on_user_id"
 
   create_table "others", force: :cascade do |t|
     t.datetime "created_at",                            null: false
@@ -50,21 +59,30 @@ ActiveRecord::Schema.define(version: 20160120151706) do
     t.integer  "hours_productive",      default: 0
     t.integer  "hours_unproductive",    default: 0
     t.integer  "hours_freetime",        default: 0
+    t.integer  "user_id"
   end
+
+  add_index "others", ["user_id"], name: "index_others_on_user_id"
 
   create_table "runnings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "duration"
     t.integer  "distance"
+    t.integer  "user_id"
   end
+
+  add_index "runnings", ["user_id"], name: "index_runnings_on_user_id"
 
   create_table "sleeps", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.datetime "end_sleep"
     t.datetime "start_sleep"
+    t.integer  "user_id"
   end
+
+  add_index "sleeps", ["user_id"], name: "index_sleeps_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",  null: false
