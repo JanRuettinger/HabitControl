@@ -10,4 +10,5 @@ class Drink < ActiveRecord::Base
   validates :liquor,
      numericality: {greater_than_or_equal_to: 0}
 
+
 end
